@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -13,8 +14,17 @@ import {
   Car, 
   DollarSign, 
   Wrench,
-  CheckCircle2 
+  CheckCircle2,
+  AlertTriangle
 } from 'lucide-react';
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -29,41 +39,91 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-                Know Your Vehicle's <span className="text-brand-orange">Complete History</span>
+                Get Your Vehicle's <span className="text-brand-orange">Full History Report</span>
               </h1>
               <p className="text-lg md:text-xl mb-8 max-w-lg">
-                Get detailed vehicle history reports, professional inspections, and expert advice before making your next vehicle purchase.
+                VIN Inspector provides comprehensive reports on accidents, title status, mileage verification, and more. Get all the information you need before buying your next vehicle.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
                   className="bg-brand-orange hover:bg-brand-lightOrange text-white"
-                  onClick={() => navigate('/services')}
+                  onClick={() => navigate('/pricing')}
                 >
-                  Our Services
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white/10"
-                  onClick={() => navigate('/how-it-works')}
-                >
-                  How It Works
+                  View Pricing Plans
                 </Button>
               </div>
             </div>
             
             <div className="lg:w-1/2">
-              <div className="bg-white p-2 rounded-lg shadow-lg">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h2 className="text-2xl font-bold text-brand-blue mb-4 text-center">Get Your Report Now</h2>
                 <VehicleLookupForm />
+                <p className="text-center mt-4 text-sm text-gray-600">Purchase a plan after your search to view the complete report</p>
               </div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Services Section */}
+      {/* What's in Our Reports Section */}
       <section className="section-padding bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">What's In Our Reports</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our comprehensive reports provide crucial information about the vehicle's history to help you make informed decisions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-red-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <AlertTriangle className="h-8 w-8 text-red-500" />
+              </div>
+              <h3 className="font-semibold">Accident History</h3>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-blue-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <Car className="h-8 w-8 text-blue-500" />
+              </div>
+              <h3 className="font-semibold">Ownership Records</h3>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-green-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 className="h-8 w-8 text-green-500" />
+              </div>
+              <h3 className="font-semibold">Title Status</h3>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-orange-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <Wrench className="h-8 w-8 text-orange-500" />
+              </div>
+              <h3 className="font-semibold">Service History</h3>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-purple-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <FileText className="h-8 w-8 text-purple-500" />
+              </div>
+              <h3 className="font-semibold">Odometer Records</h3>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <div className="bg-gray-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                <Shield className="h-8 w-8 text-gray-500" />
+              </div>
+              <h3 className="font-semibold">Recall Notices</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Section */}
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Services</h2>
@@ -88,27 +148,12 @@ const Index = () => {
               description="Ensure your vehicle meets safety standards with our thorough safety inspection and assessment."
               icon={Car}
             />
-            <ServiceCard
-              title="Vehicle Valuation"
-              description="Get an accurate market value assessment for any vehicle based on condition, history, and market trends."
-              icon={DollarSign}
-            />
-            <ServiceCard
-              title="Mechanical Inspections"
-              description="Detailed examination of all mechanical components to identify potential issues and maintenance needs."
-              icon={Wrench}
-            />
-            <ServiceCard
-              title="Expert Consultation"
-              description="Speak with our automotive experts to get advice on vehicle purchases, maintenance, and more."
-              icon={CheckCircle2}
-            />
           </div>
         </div>
       </section>
       
       {/* How It Works Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">How It Works</h2>
@@ -130,13 +175,13 @@ const Index = () => {
             />
             <ProcessStep
               number={3}
-              title="Review Information"
-              description="We'll provide you with detailed information and insights about the vehicle."
+              title="Purchase a Plan"
+              description="Select the plan that best fits your needs - Silver, Gold, or Platinum."
             />
             <ProcessStep
               number={4}
-              title="Make Informed Decisions"
-              description="Use our comprehensive reports to make confident vehicle purchasing decisions."
+              title="Access Your Report"
+              description="Receive your comprehensive report instantly and make informed decisions."
             />
           </div>
         </div>
@@ -147,7 +192,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Comprehensive Vehicle Reports</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">What You'll Get in Your Report</h2>
               <p className="text-lg mb-8">
                 Our detailed reports provide you with all the information you need to make an informed decision about your vehicle purchase.
               </p>
@@ -177,9 +222,9 @@ const Index = () => {
               
               <Button 
                 className="bg-brand-orange hover:bg-brand-lightOrange text-white"
-                onClick={() => navigate('/sample-report')}
+                onClick={() => navigate('/pricing')}
               >
-                View Sample Report
+                View Our Plans
               </Button>
             </div>
             
@@ -188,13 +233,13 @@ const Index = () => {
                 <h3 className="font-bold text-xl mb-2">Vehicle Report Summary</h3>
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div className="font-medium">Make:</div>
-                  <div>Toyota</div>
+                  <div>Honda</div>
                   <div className="font-medium">Model:</div>
-                  <div>Camry</div>
+                  <div>Civic</div>
                   <div className="font-medium">Year:</div>
-                  <div>2020</div>
+                  <div>2019</div>
                   <div className="font-medium">VIN:</div>
-                  <div>4T1BF1FK7CU123456</div>
+                  <div>2HGFC2F69KH123456</div>
                 </div>
               </div>
               
@@ -203,13 +248,13 @@ const Index = () => {
                   <div className="font-semibold text-green-700">No accidents reported</div>
                 </div>
                 <div className="p-3 bg-yellow-50 border-l-4 border-yellow-500 rounded">
-                  <div className="font-semibold text-yellow-700">2 previous owners</div>
+                  <div className="font-semibold text-yellow-700">1 previous owner</div>
                 </div>
                 <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded">
-                  <div className="font-semibold">Service records: 6 entries</div>
+                  <div className="font-semibold">Service records: 8 entries</div>
                 </div>
                 <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded">
-                  <div className="font-semibold">Last reported odometer: 35,420 miles</div>
+                  <div className="font-semibold">Last reported odometer: 28,450 miles</div>
                 </div>
               </div>
             </div>
@@ -218,35 +263,51 @@ const Index = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">What Our Customers Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Customer Reviews</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers have to say about our services.
+              See what our satisfied customers have to say about our vehicle history reports.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TestimonialCard
-              name="Sarah Johnson"
-              role="First-time Car Buyer"
-              rating={5}
-              testimonial="VehicleSavvyCheck saved me from buying a car with hidden damage. Their detailed report revealed issues the seller never mentioned. Worth every penny!"
-            />
-            <TestimonialCard
-              name="Michael Rodriguez"
-              role="Car Enthusiast"
-              rating={5}
-              testimonial="As someone who buys and sells cars frequently, I rely on VehicleSavvyCheck for every transaction. Their reports are comprehensive and have never let me down."
-            />
-            <TestimonialCard
-              name="Jennifer Williams"
-              role="Family SUV Owner"
-              rating={4}
-              testimonial="The pre-purchase inspection gave me peace of mind when buying our family SUV. The inspector found minor issues we were able to negotiate into the final price."
-            />
-          </div>
+          <Carousel className="mx-auto max-w-5xl">
+            <CarouselContent>
+              <CarouselItem className="md:basis-1/2">
+                <div className="p-4">
+                  <TestimonialCard
+                    name="Sarah Johnson"
+                    role="First-time Car Buyer"
+                    rating={5}
+                    testimonial="VIN Inspector saved me from buying a car with hidden damage. Their detailed report revealed issues the seller never mentioned. Worth every penny!"
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2">
+                <div className="p-4">
+                  <TestimonialCard
+                    name="Michael Rodriguez"
+                    role="Car Enthusiast"
+                    rating={5}
+                    testimonial="As someone who buys and sells cars frequently, I rely on VIN Inspector for every transaction. Their reports are comprehensive and have never let me down."
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2">
+                <div className="p-4">
+                  <TestimonialCard
+                    name="Jennifer Williams"
+                    role="Family SUV Owner"
+                    rating={4}
+                    testimonial="The pre-purchase inspection gave me peace of mind when buying our family SUV. The inspector found minor issues we were able to negotiate into the final price."
+                  />
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="left-0" />
+            <CarouselNext className="right-0" />
+          </Carousel>
         </div>
       </section>
       
@@ -257,12 +318,23 @@ const Index = () => {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Don't take chances with your next vehicle purchase. Get the information you need to make a confident decision.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-brand-orange hover:bg-brand-lightOrange text-white"
-          >
-            Check Your Vehicle Now
-          </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button 
+              size="lg" 
+              className="bg-brand-orange hover:bg-brand-lightOrange text-white"
+              onClick={() => navigate('/')}
+            >
+              Check Your Vehicle Now
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="bg-transparent border-white text-white hover:bg-white/10"
+              onClick={() => navigate('/pricing')}
+            >
+              View Pricing Plans
+            </Button>
+          </div>
         </div>
       </section>
       
