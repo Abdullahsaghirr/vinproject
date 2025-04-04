@@ -34,17 +34,11 @@ const Navbar = () => {
             <Link to="/services" className={`${isActive('/services')} transition-colors`}>
               Services
             </Link>
-            <Link to="/how-it-works" className={`${isActive('/how-it-works')} transition-colors`}>
-              How It Works
-            </Link>
-            <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`}>
-              Pricing
-            </Link>
             <Link to="/about" className={`${isActive('/about')} transition-colors`}>
               About Us
             </Link>
-            <Link to="/contact" className={`${isActive('/contact')} transition-colors`}>
-              Contact
+            <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`}>
+              Pricing
             </Link>
             <Button className="bg-brand-orange hover:bg-brand-lightOrange text-white">
               Get Started
@@ -76,17 +70,11 @@ const Navbar = () => {
               <Link to="/services" className={`${isActive('/services')} transition-colors`} onClick={toggleMenu}>
                 Services
               </Link>
-              <Link to="/how-it-works" className={`${isActive('/how-it-works')} transition-colors`} onClick={toggleMenu}>
-                How It Works
-              </Link>
-              <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`} onClick={toggleMenu}>
-                Pricing
-              </Link>
               <Link to="/about" className={`${isActive('/about')} transition-colors`} onClick={toggleMenu}>
                 About Us
               </Link>
-              <Link to="/contact" className={`${isActive('/contact')} transition-colors`} onClick={toggleMenu}>
-                Contact
+              <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`} onClick={toggleMenu}>
+                Pricing
               </Link>
               <Button className="bg-brand-orange hover:bg-brand-lightOrange text-white w-full">
                 Get Started

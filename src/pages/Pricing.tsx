@@ -52,7 +52,7 @@ const PricingCard = ({
       </CardContent>
       <CardFooter className="pt-6">
         <Button 
-          onClick={() => navigate('/contact')}
+          onClick={() => navigate('/services')}
           className={`w-full ${popular ? 'bg-brand-orange hover:bg-brand-lightOrange' : ''}`}
         >
           Get Started
@@ -75,7 +75,7 @@ const Pricing = () => {
               Transparent <span className="text-brand-orange">Pricing</span> Plans
             </h1>
             <p className="text-lg md:text-xl mb-8">
-              Choose the perfect vehicle inspection package to fit your needs and budget. No hidden fees!
+              Choose the perfect vehicle inspection package based on your vehicle type. No hidden fees!
             </p>
           </div>
         </div>
@@ -89,11 +89,11 @@ const Pricing = () => {
               <PricingCard
                 title="Silver"
                 price={45}
-                description="Basic inspection package with essential vehicle checks"
+                description="Perfect for compact and small vehicles"
                 color="text-gray-500"
                 icon={Shield}
                 features={[
-                  "Vehicle history report",
+                  "Small cars & compact vehicles",
                   "Basic safety inspection",
                   "Odometer verification",
                   "Title check",
@@ -105,12 +105,12 @@ const Pricing = () => {
               <PricingCard
                 title="Gold"
                 price={60}
-                description="Comprehensive inspection with detailed analysis"
+                description="Ideal for sedans, wagons, and medium-sized vehicles"
                 color="text-yellow-500"
                 icon={BadgeCheck}
                 popular
                 features={[
-                  "Everything in Silver",
+                  "Regular-sized vehicles",
                   "Mechanical systems check",
                   "Electrical systems inspection",
                   "Interior & exterior condition assessment",
@@ -122,14 +122,14 @@ const Pricing = () => {
               <PricingCard
                 title="Platinum"
                 price={75}
-                description="Premium inspection with expert analysis & recommendations"
+                description="Specialized for SUVs, 4x4s, and larger vehicles"
                 color="text-brand-blue"
                 icon={Shield}
                 features={[
-                  "Everything in Gold",
+                  "SUVs, 4x4s & large vehicles",
                   "Expert mechanical inspection",
                   "Detailed photo documentation",
-                  "Market value assessment",
+                  "Off-road capability assessment",
                   "Priority 6-hour report delivery",
                   "24/7 dedicated support"
                 ]}
@@ -137,19 +137,88 @@ const Pricing = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border max-w-3xl mx-auto">
-              <h3 className="text-xl font-semibold mb-4 text-center">Need a Custom Inspection?</h3>
-              <p className="text-gray-600 text-center mb-6">
-                We offer tailored inspection services for dealerships, fleets, and unique vehicles.
-                Contact our team to discuss your specific requirements.
-              </p>
-              <div className="text-center">
-                <Button 
-                  onClick={() => window.location.href = '/contact'}
-                  variant="outline"
-                  className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
-                >
-                  Contact Us
-                </Button>
+              <h3 className="text-xl font-semibold mb-4 text-center">Vehicle Type Comparison</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-separate border-spacing-y-2">
+                  <thead>
+                    <tr>
+                      <th className="text-left pb-4">Package</th>
+                      <th className="text-left pb-4">Vehicle Types</th>
+                      <th className="text-left pb-4">Best For</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-gray-50">
+                      <td className="py-3 px-4 font-medium">Silver</td>
+                      <td className="py-3 px-4">Hatchbacks, Compact Cars, Small Sedans</td>
+                      <td className="py-3 px-4">City driving, commuters, first-time buyers</td>
+                    </tr>
+                    <tr className="bg-white">
+                      <td className="py-3 px-4 font-medium">Gold</td>
+                      <td className="py-3 px-4">Mid-size Sedans, Wagons, Crossovers</td>
+                      <td className="py-3 px-4">Family vehicles, daily drivers</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="py-3 px-4 font-medium">Platinum</td>
+                      <td className="py-3 px-4">Large SUVs, 4x4s, Trucks, Luxury Vehicles</td>
+                      <td className="py-3 px-4">Off-roading, towing, premium vehicles</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Blog Section */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-brand-blue mb-8">Latest from Our Blog</h2>
+            
+            <div className="space-y-8">
+              <div className="border-b pb-8">
+                <h3 className="text-xl font-semibold mb-2">Why Vehicle Inspection Costs Vary by Size</h3>
+                <p className="text-gray-600 mb-4">
+                  Larger vehicles like SUVs and 4x4s require more extensive inspections due to their complex systems and additional components. 
+                  Our platinum package is specially designed to thoroughly evaluate these vehicles, including their off-road capabilities, 
+                  towing capacity, and specialized suspension systems.
+                </p>
+                <p className="text-gray-600">
+                  The inspection process for larger vehicles typically takes 30-45 minutes longer than compact cars, 
+                  requiring specialized equipment and expertise from our certified mechanics.
+                </p>
+              </div>
+              
+              <div className="border-b pb-8">
+                <h3 className="text-xl font-semibold mb-2">Common Issues Found in Different Vehicle Categories</h3>
+                <p className="text-gray-600 mb-4">
+                  <strong>Small Cars (Silver):</strong> Our inspectors frequently identify issues with wear on city-driven compact cars, 
+                  including premature brake wear, suspension component fatigue from speed bumps and potholes, and minor electrical problems.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  <strong>Medium Vehicles (Gold):</strong> Family vehicles often show signs of interior wear, climate control system issues, 
+                  and maintenance-related concerns that our gold package thoroughly examines.
+                </p>
+                <p className="text-gray-600">
+                  <strong>Large Vehicles (Platinum):</strong> SUVs and 4x4s frequently have unique issues including transfer case problems, 
+                  differential wear, suspension system damage from off-roading, and higher-than-average oil consumption that our platinum 
+                  inspection is designed to detect.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold mb-2">How to Choose the Right Inspection Package</h3>
+                <p className="text-gray-600 mb-4">
+                  When selecting an inspection package, consider not just the current size of your vehicle, but its age, 
+                  usage patterns, and your purchasing goals. For example, even if you have a compact car, the Gold package 
+                  might be more appropriate if the vehicle has high mileage or has been used in harsh conditions.
+                </p>
+                <p className="text-gray-600">
+                  Our experts are always available to help you determine which package will provide the most value based on your 
+                  specific vehicle and needs. Contact us for a personalized recommendation before booking your inspection.
+                </p>
               </div>
             </div>
           </div>
@@ -157,7 +226,7 @@ const Pricing = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-brand-blue mb-8">Frequently Asked Questions</h2>
@@ -166,28 +235,35 @@ const Pricing = () => {
               <div className="border-b pb-6">
                 <h3 className="text-xl font-semibold mb-2">How long does an inspection take?</h3>
                 <p className="text-gray-600">
-                  Most inspections take between 1-2 hours to complete. After the inspection, our team prepares a detailed report which is delivered within the timeframe specified in your chosen package.
+                  Silver package inspections typically take 1-1.5 hours. Gold package inspections take 1.5-2 hours. 
+                  Platinum package inspections for larger vehicles take 2-3 hours to complete thoroughly.
                 </p>
               </div>
               
               <div className="border-b pb-6">
-                <h3 className="text-xl font-semibold mb-2">Can I be present during the inspection?</h3>
+                <h3 className="text-xl font-semibold mb-2">What if my vehicle is a crossover or between sizes?</h3>
                 <p className="text-gray-600">
-                  Yes, you are welcome to be present during the inspection. In fact, we encourage it as it allows you to ask questions and learn more about the vehicle's condition directly from our inspector.
+                  For vehicles that fall between categories (like larger crossovers or compact SUVs), we recommend selecting 
+                  the higher-tier package to ensure all systems are properly inspected. Our team can help you determine the 
+                  most appropriate package for your specific vehicle model.
                 </p>
               </div>
               
               <div className="border-b pb-6">
-                <h3 className="text-xl font-semibold mb-2">What if issues are found during the inspection?</h3>
+                <h3 className="text-xl font-semibold mb-2">Do you offer mobile inspection services?</h3>
                 <p className="text-gray-600">
-                  Our inspectors document all issues found during the inspection. These are compiled in your report along with estimates for repairs and recommendations. This information can be valuable for negotiating the purchase price.
+                  Yes, we offer mobile inspection services for all packages. Our certified inspectors can come to your home, 
+                  work, or the seller's location to conduct the inspection. There is a small additional fee for locations 
+                  outside our standard service area.
                 </p>
               </div>
               
               <div className="pb-6">
-                <h3 className="text-xl font-semibold mb-2">Do you offer refunds?</h3>
+                <h3 className="text-xl font-semibold mb-2">How do I get started with an inspection?</h3>
                 <p className="text-gray-600">
-                  If we are unable to complete an inspection due to circumstances within our control, we offer a full refund. Please refer to our terms of service for more details on our refund policy.
+                  Simply click the "Get Started" button on your preferred package, or contact us directly to schedule your 
+                  inspection. We'll need some basic information about the vehicle (make, model, year, VIN if available) and 
+                  your preferred inspection location and time.
                 </p>
               </div>
             </div>
