@@ -2,12 +2,17 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
+  const isActive = (path: string) => {
+    return location.pathname === path ? "text-brand-blue font-medium" : "text-gray-700 hover:text-brand-blue";
+  };
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -23,19 +28,22 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-brand-blue font-medium transition-colors">
+            <Link to="/" className={`${isActive('/')} transition-colors`}>
               Home
             </Link>
-            <Link to="/services" className="text-gray-700 hover:text-brand-blue font-medium transition-colors">
+            <Link to="/services" className={`${isActive('/services')} transition-colors`}>
               Services
             </Link>
-            <Link to="/how-it-works" className="text-gray-700 hover:text-brand-blue font-medium transition-colors">
+            <Link to="/how-it-works" className={`${isActive('/how-it-works')} transition-colors`}>
               How It Works
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-brand-blue font-medium transition-colors">
+            <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`}>
+              Pricing
+            </Link>
+            <Link to="/about" className={`${isActive('/about')} transition-colors`}>
               About Us
             </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-brand-blue font-medium transition-colors">
+            <Link to="/contact" className={`${isActive('/contact')} transition-colors`}>
               Contact
             </Link>
             <Button className="bg-brand-orange hover:bg-brand-lightOrange text-white">
@@ -62,19 +70,22 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <nav className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-brand-blue font-medium transition-colors" onClick={toggleMenu}>
+              <Link to="/" className={`${isActive('/')} transition-colors`} onClick={toggleMenu}>
                 Home
               </Link>
-              <Link to="/services" className="text-gray-700 hover:text-brand-blue font-medium transition-colors" onClick={toggleMenu}>
+              <Link to="/services" className={`${isActive('/services')} transition-colors`} onClick={toggleMenu}>
                 Services
               </Link>
-              <Link to="/how-it-works" className="text-gray-700 hover:text-brand-blue font-medium transition-colors" onClick={toggleMenu}>
+              <Link to="/how-it-works" className={`${isActive('/how-it-works')} transition-colors`} onClick={toggleMenu}>
                 How It Works
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-brand-blue font-medium transition-colors" onClick={toggleMenu}>
+              <Link to="/pricing" className={`${isActive('/pricing')} transition-colors`} onClick={toggleMenu}>
+                Pricing
+              </Link>
+              <Link to="/about" className={`${isActive('/about')} transition-colors`} onClick={toggleMenu}>
                 About Us
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-brand-blue font-medium transition-colors" onClick={toggleMenu}>
+              <Link to="/contact" className={`${isActive('/contact')} transition-colors`} onClick={toggleMenu}>
                 Contact
               </Link>
               <Button className="bg-brand-orange hover:bg-brand-lightOrange text-white w-full">
