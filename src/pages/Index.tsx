@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -13,7 +12,7 @@ import {
   Shield, 
   Car, 
   DollarSign, 
-  HeadlampsFilled,
+  Wrench,
   CheckCircle2 
 } from 'lucide-react';
 
@@ -97,7 +96,7 @@ const Index = () => {
             <ServiceCard
               title="Mechanical Inspections"
               description="Detailed examination of all mechanical components to identify potential issues and maintenance needs."
-              icon={HeadlampsFilled}
+              icon={Wrench}
             />
             <ServiceCard
               title="Expert Consultation"
