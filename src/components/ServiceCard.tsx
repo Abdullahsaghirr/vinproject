@@ -1,0 +1,38 @@
+
+import React from 'react';
+import { LucideIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  className?: string;
+  iconClassName?: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  description,
+  icon: Icon,
+  className,
+  iconClassName,
+}) => {
+  return (
+    <div className={cn("bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow", className)}>
+      <div className="flex flex-col items-center text-center">
+        <div className={cn("p-3 rounded-full bg-brand-blue/10 text-brand-blue mb-4", iconClassName)}>
+          <Icon size={28} />
+        </div>
+        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <p className="text-gray-600 mb-6">{description}</p>
+        <Button variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors">
+          Learn More
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export default ServiceCard;
