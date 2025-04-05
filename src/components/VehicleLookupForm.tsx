@@ -10,6 +10,7 @@ const VehicleLookupForm: React.FC = () => {
   const [vinValue, setVinValue] = useState('');
   const [licensePlate, setLicensePlate] = useState('');
   const [state, setState] = useState('');
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const handleVinSearch = (event: React.FormEvent) => {
     event.preventDefault();
@@ -18,10 +19,11 @@ const VehicleLookupForm: React.FC = () => {
       return;
     }
     
-    toast.success('Vehicle lookup initiated!', {
-      description: `Searching for details on VIN: ${vinValue}`,
+    toast.success('Vehicle found!', {
+      description: 'Please select a plan to view the complete report',
     });
     
+    setShowPaymentModal(true);
     // In a real app, this would initiate an API call
     console.log('VIN search for:', vinValue);
   };
@@ -38,10 +40,11 @@ const VehicleLookupForm: React.FC = () => {
       return;
     }
     
-    toast.success('Vehicle lookup initiated!', {
-      description: `Searching for ${licensePlate} from ${state}`,
+    toast.success('Vehicle found!', {
+      description: 'Please select a plan to view the complete report',
     });
     
+    setShowPaymentModal(true);
     // In a real app, this would initiate an API call
     console.log('License search for:', { licensePlate, state });
   };
@@ -50,14 +53,14 @@ const VehicleLookupForm: React.FC = () => {
     <div className="bg-white p-6 rounded-lg shadow-lg">
       <Tabs defaultValue="vin" className="w-full">
         <TabsList className="grid grid-cols-2 mb-4">
-          <TabsTrigger value="vin">Search by VIN</TabsTrigger>
-          <TabsTrigger value="license">Search by License Plate</TabsTrigger>
+          <TabsTrigger value="vin" className="text-sm md:text-base">Search by VIN</TabsTrigger>
+          <TabsTrigger value="license" className="text-sm md:text-base">Search by License Plate</TabsTrigger>
         </TabsList>
         
         <TabsContent value="vin">
           <form onSubmit={handleVinSearch} className="space-y-4">
             <div>
-              <label htmlFor="vin" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="vin" className="block text-sm font-medium text-gray-700 mb-1 truncate">
                 Vehicle Identification Number (VIN)
               </label>
               <Input
@@ -86,7 +89,7 @@ const VehicleLookupForm: React.FC = () => {
         <TabsContent value="license">
           <form onSubmit={handleLicenseSearch} className="space-y-4">
             <div>
-              <label htmlFor="license-plate" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="license-plate" className="block text-sm font-medium text-gray-700 mb-1 truncate">
                 License Plate Number
               </label>
               <Input
@@ -99,7 +102,7 @@ const VehicleLookupForm: React.FC = () => {
             </div>
             
             <div>
-              <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1 truncate">
                 State
               </label>
               <select

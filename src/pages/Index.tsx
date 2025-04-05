@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,6 +7,7 @@ import VehicleLookupForm from '@/components/VehicleLookupForm';
 import ServiceCard from '@/components/ServiceCard';
 import ProcessStep from '@/components/ProcessStep';
 import TestimonialCard from '@/components/TestimonialCard';
+import PaymentOptions from '@/components/PaymentOptions';
 import { Button } from '@/components/ui/button';
 import { 
   FileText, 
@@ -15,8 +16,18 @@ import {
   DollarSign, 
   Wrench,
   CheckCircle2,
-  AlertTriangle
+  AlertTriangle,
+  X
 } from 'lucide-react';
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 import {
   Carousel,
@@ -28,6 +39,7 @@ import {
 
 const Index = () => {
   const navigate = useNavigate();
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -35,7 +47,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="hero-gradient text-white">
-        <div className="container mx-auto px-4 py-20 md:py-32">
+        <div className="container mx-auto px-4 py-20 md:py-28">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -121,9 +133,74 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Vehicle Types Section */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Plans By Vehicle Type</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We offer specialized reports tailored to different vehicle types, ensuring you get the most relevant information.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-48 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1558383817-c4383d7b6d00?w=800&auto=format&fit=crop" alt="Small Car" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Small Cars</h3>
+                <p className="text-gray-600 mb-4">Compact cars, hatchbacks, and economy vehicles with our Silver plan.</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                  onClick={() => setShowPaymentModal(true)}
+                >
+                  Get Silver Plan
+                </Button>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-48 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&auto=format&fit=crop" alt="Standard Vehicle" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Standard Vehicles</h3>
+                <p className="text-gray-600 mb-4">Sedans, coupes, and mid-size vehicles with our Gold plan.</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
+                  onClick={() => setShowPaymentModal(true)}
+                >
+                  Get Gold Plan
+                </Button>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-48 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop" alt="SUV & 4x4" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">SUVs & 4x4s</h3>
+                <p className="text-gray-600 mb-4">Large vehicles, trucks, and heavy-duty with our Platinum plan.</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                  onClick={() => setShowPaymentModal(true)}
+                >
+                  Get Platinum Plan
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Services Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Services</h2>
@@ -153,7 +230,7 @@ const Index = () => {
       </section>
       
       {/* How It Works Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">How It Works</h2>
@@ -222,9 +299,9 @@ const Index = () => {
               
               <Button 
                 className="bg-brand-orange hover:bg-brand-lightOrange text-white"
-                onClick={() => navigate('/pricing')}
+                onClick={() => setShowPaymentModal(true)}
               >
-                View Our Plans
+                Get Your Report Now
               </Button>
             </div>
             
@@ -322,7 +399,7 @@ const Index = () => {
             <Button 
               size="lg" 
               className="bg-brand-orange hover:bg-brand-lightOrange text-white"
-              onClick={() => navigate('/')}
+              onClick={() => setShowPaymentModal(true)}
             >
               Check Your Vehicle Now
             </Button>
@@ -337,6 +414,25 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      {/* Payment Modal */}
+      <Dialog open={showPaymentModal} onOpenChange={setShowPaymentModal}>
+        <DialogContent className="sm:max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center mb-2">Choose Your Plan</DialogTitle>
+            <DialogDescription className="text-center max-w-md mx-auto">
+              Select the plan that best fits your vehicle type and information needs
+            </DialogDescription>
+          </DialogHeader>
+          
+          <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          
+          <PaymentOptions />
+        </DialogContent>
+      </Dialog>
       
       <Footer />
     </div>
