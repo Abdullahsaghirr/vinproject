@@ -149,7 +149,7 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/1eb07157-0060-4079-9659-42368716b041.png" 
+                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
                   alt="Small Car" 
                   className="w-full h-full object-cover"
                 />
@@ -170,7 +170,7 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/293e0963-8d80-48be-b4ae-722cf46b662e.png" 
+                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
                   alt="Standard Vehicle" 
                   className="w-full h-full object-cover"
                 />
@@ -191,7 +191,7 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/3f1c9ceb-d883-4688-8365-d2edbcb8aea3.png" 
+                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
                   alt="SUV & 4x4" 
                   className="w-full h-full object-cover"
                 />
@@ -212,38 +212,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Services Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We offer comprehensive vehicle inspection services to help you make informed decisions about your next vehicle purchase.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              title="Vehicle History Reports"
-              description="Get a detailed report of the vehicle's history including accidents, title information, service records, and more."
-              icon={FileText}
-            />
-            <ServiceCard
-              title="Pre-Purchase Inspections"
-              description="Our certified mechanics will perform a comprehensive inspection before you commit to buying a vehicle."
-              icon={Shield}
-            />
-            <ServiceCard
-              title="Safety Assessments"
-              description="Ensure your vehicle meets safety standards with our thorough safety inspection and assessment."
-              icon={Car}
-            />
-          </div>
-        </div>
-      </section>
-      
       {/* How It Works Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">How It Works</h2>
