@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface ServiceCardProps {
@@ -26,10 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <Icon size={28} />
         </div>
         <h3 className="text-xl font-semibold mb-3">{title}</h3>
-        <p className="text-gray-600 mb-6">{description}</p>
-        <Button variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors">
-          Learn More
-        </Button>
+        <p className="text-gray-600">{description}</p>
       </div>
     </div>
   );

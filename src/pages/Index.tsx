@@ -37,6 +37,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { Card, CardContent } from "@/components/ui/card";
+
 const Index = () => {
   const navigate = useNavigate();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -71,7 +73,6 @@ const Index = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold text-brand-blue mb-4 text-center">Get Your Report Now</h2>
                 <VehicleLookupForm />
-                <p className="text-center mt-4 text-sm text-gray-600">Purchase a plan after your search to view the complete report</p>
               </div>
             </div>
           </div>
@@ -145,11 +146,15 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1558383817-c4383d7b6d00?w=800&auto=format&fit=crop" alt="Small Car" className="w-full h-full object-cover" />
+            <Card className="overflow-hidden">
+              <div className="h-48 bg-gray-100 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/1eb07157-0060-4079-9659-42368716b041.png" 
+                  alt="Small Car" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="p-6">
+              <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Small Cars</h3>
                 <p className="text-gray-600 mb-4">Compact cars, hatchbacks, and economy vehicles with our Silver plan.</p>
                 <Button 
@@ -159,14 +164,18 @@ const Index = () => {
                 >
                   Get Silver Plan
                 </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&auto=format&fit=crop" alt="Standard Vehicle" className="w-full h-full object-cover" />
+            <Card className="overflow-hidden">
+              <div className="h-48 bg-gray-100 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/293e0963-8d80-48be-b4ae-722cf46b662e.png" 
+                  alt="Standard Vehicle" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="p-6">
+              <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Standard Vehicles</h3>
                 <p className="text-gray-600 mb-4">Sedans, coupes, and mid-size vehicles with our Gold plan.</p>
                 <Button 
@@ -176,14 +185,18 @@ const Index = () => {
                 >
                   Get Gold Plan
                 </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop" alt="SUV & 4x4" className="w-full h-full object-cover" />
+            <Card className="overflow-hidden">
+              <div className="h-48 bg-gray-100 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/3f1c9ceb-d883-4688-8365-d2edbcb8aea3.png" 
+                  alt="SUV & 4x4" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="p-6">
+              <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">SUVs & 4x4s</h3>
                 <p className="text-gray-600 mb-4">Large vehicles, trucks, and heavy-duty with our Platinum plan.</p>
                 <Button 
@@ -193,8 +206,8 @@ const Index = () => {
                 >
                   Get Platinum Plan
                 </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -305,7 +318,7 @@ const Index = () => {
               </Button>
             </div>
             
-            <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform rotate-1">
+            <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform md:rotate-1">
               <div className="bg-gray-100 p-4 rounded-md mb-4">
                 <h3 className="font-bold text-xl mb-2">Vehicle Report Summary</h3>
                 <div className="grid grid-cols-2 gap-2 text-sm">
