@@ -61,7 +61,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-brand-orange hover:bg-brand-lightOrange text-white"
+                  className="bg-brand-orange hover:bg-brand-lightOrange text-white transition-all duration-300 transform hover:scale-105"
                   onClick={() => navigate('/pricing')}
                 >
                   View Pricing Plans
@@ -70,7 +70,7 @@ const Index = () => {
             </div>
             
             <div className="lg:w-1/2">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform hover:scale-[1.01] transition-all duration-300">
                 <h2 className="text-2xl font-bold text-brand-blue mb-4 text-center">Get Your Report Now</h2>
                 <VehicleLookupForm />
               </div>
@@ -83,51 +83,51 @@ const Index = () => {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">What's In Our Reports</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4 animate-fade-in">What's In Our Reports</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Our comprehensive reports provide crucial information about the vehicle's history to help you make informed decisions.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-red-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <AlertTriangle className="h-8 w-8 text-red-500" />
+                <AlertTriangle className="h-8 w-8 text-red-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Accident History</h3>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-blue-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <Car className="h-8 w-8 text-blue-500" />
+                <Car className="h-8 w-8 text-blue-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Ownership Records</h3>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-green-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <CheckCircle2 className="h-8 w-8 text-green-500" />
+                <CheckCircle2 className="h-8 w-8 text-green-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Title Status</h3>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-orange-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <Wrench className="h-8 w-8 text-orange-500" />
+                <Wrench className="h-8 w-8 text-orange-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Service History</h3>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-purple-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <FileText className="h-8 w-8 text-purple-500" />
+                <FileText className="h-8 w-8 text-purple-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Odometer Records</h3>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-md">
               <div className="bg-gray-50 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <Shield className="h-8 w-8 text-gray-500" />
+                <Shield className="h-8 w-8 text-gray-500 animate-pulse" />
               </div>
               <h3 className="font-semibold">Recall Notices</h3>
             </div>
@@ -139,7 +139,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Plans By Vehicle Type</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4 animate-fade-in">Our Plans By Vehicle Type</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               We offer specialized reports tailored to different vehicle types, ensuring you get the most relevant information.
             </p>
@@ -149,9 +149,9 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
+                  src="/lovable-uploads/01f2fc10-fe38-4e50-9c5b-a2124db65429.png" 
                   alt="Small Car" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-all duration-500"
                 />
               </div>
               <CardContent className="p-6">
@@ -159,7 +159,7 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">Compact cars, hatchbacks, and economy vehicles with our Silver plan.</p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 transform hover:scale-[1.02]"
                   onClick={() => setShowPaymentModal(true)}
                 >
                   Get Silver Plan
@@ -170,9 +170,9 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
+                  src="/lovable-uploads/3f1c9ceb-d883-4688-8365-d2edbcb8aea3.png" 
                   alt="Standard Vehicle" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-all duration-500"
                 />
               </div>
               <CardContent className="p-6">
@@ -180,7 +180,7 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">Sedans, coupes, and mid-size vehicles with our Gold plan.</p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
+                  className="w-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 transform hover:scale-[1.02]"
                   onClick={() => setShowPaymentModal(true)}
                 >
                   Get Gold Plan
@@ -191,9 +191,9 @@ const Index = () => {
             <Card className="overflow-hidden">
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/372bd5cc-3442-4b86-9950-81b9ede507b7.png" 
+                  src="/lovable-uploads/293e0963-8d80-48be-b4ae-722cf46b662e.png" 
                   alt="SUV & 4x4" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-all duration-500"
                 />
               </div>
               <CardContent className="p-6">
@@ -201,7 +201,7 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">Large vehicles, trucks, and heavy-duty with our Platinum plan.</p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 transform hover:scale-[1.02]"
                   onClick={() => setShowPaymentModal(true)}
                 >
                   Get Platinum Plan
@@ -216,7 +216,7 @@ const Index = () => {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4 animate-fade-in">How It Works</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Our simple 4-step process helps you get the information you need quickly and easily.
             </p>
@@ -252,43 +252,43 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">What You'll Get in Your Report</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">What You'll Get in Your Report</h2>
               <p className="text-lg mb-8">
                 Our detailed reports provide you with all the information you need to make an informed decision about your vehicle purchase.
               </p>
               
               <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0" />
+                <li className="flex items-start transform hover:translate-x-2 transition-all duration-300">
+                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0 animate-pulse" />
                   <span>Complete accident history and damage reports</span>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0" />
+                <li className="flex items-start transform hover:translate-x-2 transition-all duration-300">
+                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0 animate-pulse" />
                   <span>Verify mileage accuracy and odometer readings</span>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0" />
+                <li className="flex items-start transform hover:translate-x-2 transition-all duration-300">
+                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0 animate-pulse" />
                   <span>Title problems and registration history</span>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0" />
+                <li className="flex items-start transform hover:translate-x-2 transition-all duration-300">
+                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0 animate-pulse" />
                   <span>Service and maintenance records</span>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0" />
+                <li className="flex items-start transform hover:translate-x-2 transition-all duration-300">
+                  <CheckCircle2 className="mr-3 text-brand-orange mt-1 flex-shrink-0 animate-pulse" />
                   <span>Previous ownership and usage history</span>
                 </li>
               </ul>
               
               <Button 
-                className="bg-brand-orange hover:bg-brand-lightOrange text-white"
+                className="bg-brand-orange hover:bg-brand-lightOrange text-white transition-all duration-300 transform hover:scale-105"
                 onClick={() => setShowPaymentModal(true)}
               >
                 Get Your Report Now
               </Button>
             </div>
             
-            <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform md:rotate-1">
+            <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform hover:rotate-0 hover:scale-105 transition-all duration-500 md:rotate-1">
               <div className="bg-gray-100 p-4 rounded-md mb-4">
                 <h3 className="font-bold text-xl mb-2">Vehicle Report Summary</h3>
                 <div className="grid grid-cols-2 gap-2 text-sm">
@@ -304,16 +304,16 @@ const Index = () => {
               </div>
               
               <div className="space-y-3">
-                <div className="p-3 bg-green-50 border-l-4 border-green-500 rounded">
+                <div className="p-3 bg-green-50 border-l-4 border-green-500 rounded hover:shadow-md transition-all duration-300">
                   <div className="font-semibold text-green-700">No accidents reported</div>
                 </div>
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-500 rounded hover:shadow-md transition-all duration-300">
                   <div className="font-semibold text-yellow-700">1 previous owner</div>
                 </div>
-                <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded">
+                <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded hover:shadow-md transition-all duration-300">
                   <div className="font-semibold">Service records: 8 entries</div>
                 </div>
-                <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded">
+                <div className="p-3 bg-gray-50 border-l-4 border-gray-500 rounded hover:shadow-md transition-all duration-300">
                   <div className="font-semibold">Last reported odometer: 28,450 miles</div>
                 </div>
               </div>
@@ -326,7 +326,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Customer Reviews</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4 animate-fade-in">Customer Reviews</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               See what our satisfied customers have to say about our vehicle history reports.
             </p>
@@ -374,14 +374,14 @@ const Index = () => {
       {/* CTA Section */}
       <section className="section-padding bg-brand-lightBlue text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">Ready to Get Started?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Don't take chances with your next vehicle purchase. Get the information you need to make a confident decision.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-brand-orange hover:bg-brand-lightOrange text-white"
+              className="bg-brand-orange hover:bg-brand-lightOrange text-white transition-all duration-300 transform hover:scale-105"
               onClick={() => setShowPaymentModal(true)}
             >
               Check Your Vehicle Now
@@ -389,7 +389,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white/10"
+              className="bg-transparent border-white text-white hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
               onClick={() => navigate('/pricing')}
             >
               View Pricing Plans

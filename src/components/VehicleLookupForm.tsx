@@ -50,24 +50,24 @@ const VehicleLookupForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
+    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
       <Tabs defaultValue="vin" className="w-full">
         <TabsList className="grid grid-cols-2 mb-4">
-          <TabsTrigger value="vin" className="text-sm md:text-base font-medium">
+          <TabsTrigger value="vin" className="text-sm md:text-base font-medium transition-all duration-200 hover:bg-brand-blue/10">
             <div className="flex items-center">
-              <Search className="w-4 h-4 mr-2" />
-              <span className="truncate">VIN Number</span>
+              <Search className="w-4 h-4 mr-2 animate-pulse" />
+              <span className="truncate">Search by VIN</span>
             </div>
           </TabsTrigger>
-          <TabsTrigger value="license" className="text-sm md:text-base font-medium">
+          <TabsTrigger value="license" className="text-sm md:text-base font-medium transition-all duration-200 hover:bg-brand-blue/10">
             <div className="flex items-center">
-              <Search className="w-4 h-4 mr-2" />
-              <span className="truncate">License Plate</span>
+              <Search className="w-4 h-4 mr-2 animate-pulse" />
+              <span className="truncate">Search by License</span>
             </div>
           </TabsTrigger>
         </TabsList>
         
-        <TabsContent value="vin">
+        <TabsContent value="vin" className="animate-fade-in">
           <form onSubmit={handleVinSearch} className="space-y-4">
             <div>
               <label htmlFor="vin" className="block text-sm font-medium text-gray-700 mb-1">
@@ -79,7 +79,7 @@ const VehicleLookupForm: React.FC = () => {
                 value={vinValue}
                 onChange={(e) => setVinValue(e.target.value.toUpperCase())}
                 maxLength={17}
-                className="w-full"
+                className="w-full transition-all duration-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
               <div className="flex items-start mt-1 text-xs text-gray-500">
                 <Info className="w-3 h-3 mr-1 mt-0.5 flex-shrink-0" />
@@ -89,7 +89,7 @@ const VehicleLookupForm: React.FC = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-brand-blue hover:bg-brand-lightBlue text-white"
+              className="w-full bg-brand-blue hover:bg-brand-lightBlue text-white transition-all duration-300 transform hover:scale-[1.02]"
             >
               <Search className="mr-2 h-4 w-4" />
               Look Up Vehicle History
@@ -97,7 +97,7 @@ const VehicleLookupForm: React.FC = () => {
           </form>
         </TabsContent>
         
-        <TabsContent value="license">
+        <TabsContent value="license" className="animate-fade-in">
           <form onSubmit={handleLicenseSearch} className="space-y-4">
             <div>
               <label htmlFor="license-plate" className="block text-sm font-medium text-gray-700 mb-1">
@@ -108,7 +108,7 @@ const VehicleLookupForm: React.FC = () => {
                 placeholder="Enter license plate number"
                 value={licensePlate}
                 onChange={(e) => setLicensePlate(e.target.value.toUpperCase())}
-                className="w-full"
+                className="w-full transition-all duration-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
             </div>
             
@@ -120,7 +120,7 @@ const VehicleLookupForm: React.FC = () => {
                 id="state"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200"
               >
                 <option value="">Select State</option>
                 <option value="AL">Alabama</option>
@@ -137,7 +137,7 @@ const VehicleLookupForm: React.FC = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-brand-blue hover:bg-brand-lightBlue text-white"
+              className="w-full bg-brand-blue hover:bg-brand-lightBlue text-white transition-all duration-300 transform hover:scale-[1.02]"
             >
               <Search className="mr-2 h-4 w-4" />
               Look Up Vehicle History
@@ -145,7 +145,7 @@ const VehicleLookupForm: React.FC = () => {
           </form>
         </TabsContent>
       </Tabs>
-      <p className="text-center mt-4 text-sm font-semibold text-brand-blue bg-blue-50 p-2 rounded-md">
+      <p className="text-center mt-4 text-sm font-semibold text-brand-blue bg-blue-50 p-2 rounded-md transform hover:scale-[1.02] transition-all duration-200">
         After your search, purchase a plan to view the complete vehicle history report
       </p>
     </div>
